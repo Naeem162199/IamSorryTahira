@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fbf3f0">
+<title>For Tahira — Our Story</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbf5f2;--paper:#fffaf8;--deep:#f5eae6;--ink:#2a2525;--muted:#716361;--soft:#b18f89;--rose:#a96260;--rose2:#c98582;--line:rgba(84,62,59,.14);--shadow:0 25px 80px rgba(81,56,50,.10)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.7;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.28;background-image:radial-gradient(rgba(90,65,60,.055) .65px,transparent .65px);background-size:9px 9px;z-index:99}.progress{position:fixed;top:0;left:0;right:0;height:3px;background:transparent;z-index:1000}.progress span{display:block;width:0;height:100%;background:var(--rose)}
+a{color:inherit}.section{padding:120px 24px;position:relative}.container{max-width:1120px;margin:auto}.narrow{max-width:820px}.eyebrow{text-transform:uppercase;letter-spacing:.22em;font-size:11px;color:var(--soft);font-weight:600;margin:0 0 20px}.section-title,.hero-title,.final-title{font-family:"Cormorant Garamond",serif;font-weight:600;letter-spacing:-.02em;line-height:.98;margin:0}.section-title{font-size:clamp(50px,6vw,82px)}.section-title em,.hero-title em{color:var(--rose);font-weight:500}
+/* Important: content is visible even if JS is unavailable. */
+.reveal{opacity:1;transform:none}.js-ready .reveal{opacity:0;transform:translateY(24px);transition:opacity .85s ease,transform .85s cubic-bezier(.2,.7,.2,1)}.js-ready .reveal.in-view{opacity:1;transform:translateY(0)}
+/* hero */
+.hero{min-height:100svh;display:flex;align-items:center;background:linear-gradient(135deg,#fbf5f2,#f8eeeb);overflow:hidden}.hero-inner{text-align:center}.hero-title{font-size:clamp(64px,9vw,124px);max-width:1000px;margin:auto}.hero-subtitle{max-width:630px;margin:28px auto 42px;color:var(--muted);font-size:16px}.hero-photo,.memory-img,.person-image{position:relative;overflow:hidden;background:linear-gradient(135deg,#ead9d3,#dfc4bd)}.hero-photo{width:min(760px,90vw);aspect-ratio:16/10;margin:auto;border-radius:32px;box-shadow:var(--shadow)}.hero-photo:after,.memory-img:after,.person-image:after{content:"Add your photo here";position:absolute;inset:0;display:grid;place-items:center;color:#8d716b;font-family:"Cormorant Garamond",serif;font-size:clamp(24px,4vw,42px);opacity:0;pointer-events:none}.hero-photo.missing:after,.memory-img.missing:after,.person-image.missing:after{opacity:1}.hero-photo img,.memory-img img,.person-image img{width:100%;height:100%;object-fit:cover;display:block}.hero-photo img.failed,.memory-img img.failed,.person-image img.failed{display:none}.photo-overlay{position:absolute;bottom:18px;left:18px;padding:7px 12px;border-radius:999px;background:rgba(255,250,248,.82);backdrop-filter:blur(10px);font-family:"Cormorant Garamond",serif;font-size:18px}.scroll-hint{margin-top:32px;display:flex;justify-content:center;align-items:center;gap:12px;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.16em}.scroll-hint i{width:34px;height:1px;background:var(--soft);position:relative}.scroll-hint i:after{content:"";width:6px;height:6px;border-right:1px solid var(--soft);border-bottom:1px solid var(--soft);transform:rotate(45deg);position:absolute;right:0;top:-3px}
+/* story */
+.story{background:var(--paper)}.story-copy{margin-top:46px;max-width:690px;color:#5f5451;font-size:18px}.story-copy p{margin:0 0 20px}.memory-grid{margin-top:70px;display:grid;grid-template-columns:1.15fr .85fr;gap:20px}.memory-card{margin:0}.memory-img{aspect-ratio:5/4;border-radius:24px}.memory-card:nth-child(2) .memory-img{aspect-ratio:4/5}.memory-card figcaption{font-family:"Cormorant Garamond",serif;font-size:20px;color:#796a65;margin-top:12px}
+/* separation / scroll scene */
+.separation{background:var(--deep);overflow:visible}
+.separation-intro{max-width:760px;margin-bottom:56px}
+.separation-intro>p:last-child{color:var(--muted);max-width:650px;font-size:17px;margin-top:28px}
+.scene-scroll{height:300vh;position:relative}
+.scene-sticky{position:sticky;top:0;height:100svh;min-height:620px;width:100%;display:grid;grid-template-columns:1fr minmax(30px,0fr) 1fr;align-items:center;overflow:hidden}
+.person-panel{position:relative;height:min(68vh,680px);will-change:transform;z-index:2}
+.person-left{padding-right:4px}
+.person-right{padding-left:4px}
+.person-image{height:100%;border-radius:30px;box-shadow:0 20px 50px rgba(70,48,44,.10)}
+.person-caption{position:absolute;bottom:20px;left:28px;font-family:"Cormorant Garamond",serif;font-size:28px;color:white;text-shadow:0 3px 18px rgba(0,0,0,.25)}
+.person-right .person-caption{left:auto;right:28px}
+.center-message{min-width:0;opacity:0;transform:translateY(15px) scale(.96);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;position:relative;z-index:3;overflow:visible}
+.message-line{width:1px;height:60px;background:var(--soft);margin-bottom:24px}
+.message-small{margin:0 0 15px;color:var(--soft);text-transform:uppercase;letter-spacing:.13em;font-size:9px;font-weight:600;white-space:nowrap}
+.center-message h3{font-family:"Cormorant Garamond",serif;font-size:clamp(30px,3vw,48px);line-height:1.04;margin:0;font-weight:600;max-width:310px}
+.growth-copy{max-width:770px;margin:100px auto 0}
+.growth-point{display:grid;grid-template-columns:58px 1fr;gap:28px;padding:36px 0;border-top:1px solid var(--line)}
+.growth-point h3{font-family:"Cormorant Garamond",serif;font-size:34px;margin:0 0 10px}
+.growth-point p{color:var(--muted);margin:0;font-size:16px}
+.point-number{color:var(--soft);font-size:12px;padding-top:7px}
+.final-point{border-bottom:1px solid var(--line)}
+/* timeline */
+.timeline-section{background:var(--paper)}.timeline-intro{color:var(--muted);margin:22px 0 75px}.timeline-wrap{position:relative;display:grid;grid-template-columns:repeat(7,minmax(130px,1fr));gap:18px;padding:42px 0 18px;overflow-x:auto}.timeline-line{position:absolute;left:2%;right:2%;top:52px;height:1px;background:#dbc9c4}.timeline-item{position:relative;min-width:130px;padding-top:43px}.timeline-dot{width:15px;height:15px;border-radius:50%;border:2px solid #c5aaa4;background:var(--paper);position:absolute;left:0;top:45px;transform:translateY(-50%);z-index:2}.timeline-number{display:block;font-size:10px;color:var(--soft);margin-bottom:12px}.timeline-item h3{font-family:"Cormorant Garamond",serif;font-size:27px;line-height:1.05;margin:0 0 8px}.timeline-item p{color:var(--muted);font-size:13px;margin:0;max-width:150px}.timeline-item.current .timeline-dot{background:var(--rose);border-color:var(--rose);box-shadow:0 0 0 8px rgba(159,94,94,.1)}.current-tag{display:inline-block;margin-top:14px;font-size:8px;letter-spacing:.13em;color:#fff;background:var(--rose);padding:5px 8px;border-radius:999px}
+/* letter */
+.letter-section{background:#f7eeeb}.letter-intro{max-width:610px;color:var(--muted);margin:28px 0 48px}.letter-stack{display:grid;gap:12px}.letter-card{background:rgba(255,250,248,.76);border:1px solid rgba(125,91,85,.1);border-radius:18px;overflow:hidden;transition:.3s}.letter-card[open]{background:rgba(255,250,248,.98);box-shadow:0 18px 50px rgba(77,48,43,.07)}.letter-card summary{cursor:pointer;list-style:none;padding:22px 24px;display:flex;justify-content:space-between;gap:20px;align-items:center;font-family:"Cormorant Garamond",serif;font-size:25px;line-height:1.2}.letter-card summary::-webkit-details-marker{display:none}.letter-card summary b{font-family:"DM Sans",sans-serif;font-weight:400;color:var(--rose);font-size:23px;transition:.3s}.letter-card[open] summary b{transform:rotate(45deg)}.letter-answer{padding:0 24px 25px;color:#665957;font-size:16px}.letter-answer p{margin:0}.letter-closing{margin-top:74px;padding:48px 0;border-top:1px solid var(--line);color:#645653;font-size:17px}.closing-lead{font-family:"Cormorant Garamond",serif;font-size:34px;color:var(--ink)}.closing-emphasis{font-family:"Cormorant Garamond",serif;font-size:31px;line-height:1.1;color:var(--rose)}
+/* final */
+.final-section{background:radial-gradient(circle at 50% 15%,#fff9f6,#f8eeeb 46%,#f2e3df 100%);min-height:88vh;display:grid;align-items:center;text-align:center}.final-inner{width:100%}.final-title{font-size:clamp(74px,10vw,130px)}.final-copy{max-width:640px;margin:30px auto 44px;color:var(--muted);font-size:17px}.choice-area{width:370px;height:120px;margin:auto;position:relative;display:flex;justify-content:center;align-items:center;gap:18px}.choice{display:inline-flex;align-items:center;justify-content:center;height:50px;padding:0 25px;border-radius:999px;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s;font-weight:600;font-size:14px;z-index:2}.yes-btn{background:var(--rose);color:#fff;box-shadow:0 15px 35px rgba(159,94,94,.22)}.yes-btn:hover{transform:translateY(-2px);box-shadow:0 20px 40px rgba(159,94,94,.28)}.no-btn{background:rgba(255,255,255,.78);color:#6e5e5b;border-color:rgba(110,94,91,.14);position:relative}.tiny-note{margin:14px 0 0;color:#9b8782;font-size:11px}.call-reveal{opacity:0;transform:translateY(12px);pointer-events:none;margin-top:28px;transition:.5s}.call-reveal.show{opacity:1;transform:translateY(0);pointer-events:auto}.call-reveal p{margin:0 0 4px;color:var(--muted)}.call-reveal a{color:var(--rose);font-family:"Cormorant Garamond",serif;font-size:34px;text-decoration:none}footer{padding:28px 20px 36px;text-align:center;font-size:11px;letter-spacing:.08em;color:#9f8a84;background:#f2e3df}
+/* music control */
+#musicToggle{position:fixed;bottom:22px;right:22px;z-index:1000;width:46px;height:46px;border-radius:50%;border:1px solid rgba(110,94,91,.16);background:rgba(255,250,248,.85);backdrop-filter:blur(10px);cursor:pointer;font-size:17px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(81,56,50,.14);color:var(--rose);transition:transform .2s,box-shadow .2s}
+#musicToggle:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(81,56,50,.18)}
+@media(max-width:900px){.section{padding:88px 20px}.split-scene{grid-template-columns:1fr 120px 1fr;min-height:450px}.center-message h3{font-size:27px}.timeline-wrap{grid-template-columns:repeat(7,155px)}}
+@media(max-width:650px){.section{padding:72px 16px}.hero-title{font-size:clamp(55px,16vw,82px)}.hero-subtitle{font-size:15px}.hero-photo{border-radius:22px}.memory-grid{grid-template-columns:1fr}.memory-img,.memory-card:nth-child(2) .memory-img{aspect-ratio:4/5}.split-scene{height:430px;min-height:430px;grid-template-columns:1fr 70px 1fr}.person-left{padding-right:8px}.person-right{padding-left:8px}.person-image{border-radius:20px}.center-message{padding:4px}.center-message h3{font-size:24px}.message-small{font-size:7px}.growth-copy{margin-top:65px}.growth-point{grid-template-columns:35px 1fr;gap:15px}.growth-point h3{font-size:29px}.letter-card summary{font-size:22px;padding:19px 18px}.letter-answer{padding:0 18px 21px;font-size:15px}.closing-emphasis{font-size:27px}.choice-area{width:min(95vw,340px)}.choice{padding:0 19px}.final-title{font-size:75px}.call-reveal a{font-size:28px}#musicToggle{width:42px;height:42px;bottom:16px;right:16px}}
+</style>
+</head>
+<body>
+<div class="progress"><span id="progressBar"></span></div>
+<div id="yt-player" style="position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;overflow:hidden;bottom:0;left:0;" aria-hidden="true"></div>
+<button id="musicToggle" type="button" aria-label="Toggle music" title="Music">♪</button>
+<main>
+<section class="hero section"><div class="container hero-inner"><p class="eyebrow reveal">For Tahira</p><h1 class="hero-title reveal">Maybe some things<br><em>need to be said slowly.</em></h1><p class="hero-subtitle reveal">So I made this little place for our story, the things I understand now, and everything I couldn't say properly before.</p><div class="hero-photo reveal" data-image-frame><img src="assets/images/hero.jpg" alt="A photo of us"><div class="photo-overlay">our story</div></div><div class="scroll-hint reveal"><span>scroll slowly</span><i></i></div></div></section>
+<section class="story section"><div class="container narrow"><p class="eyebrow reveal">Our story</p><h2 class="section-title reveal">It started so simply.</h2><div class="story-copy reveal"><p>Somewhere along the way, you stopped being just someone I liked talking to. You became the person I wanted to share the small things with, the person I imagined beside me when I thought about what life could look like.</p><p>We had our own little world — conversations, silly moments, plans, misunderstandings, making up, and all the ordinary things that slowly became important because they were ours.</p><p>I don't think either of us expected that we would reach a point where we would have to wonder whether our story had ended.</p></div><div class="memory-grid reveal"><figure class="memory-card"><div class="memory-img" data-image-frame><img src="assets/images/story-1.jpg" alt="Our memory"></div><figcaption>the moments I still keep close</figcaption></figure><figure class="memory-card"><div class="memory-img" data-image-frame><img src="assets/images/story-2.jpg" alt="Another memory of us"></div><figcaption>the little things mattered too</figcaption></figure></div></div></section>
+<section class="separation section">
+  <div class="container">
+    <div class="separation-intro reveal">
+      <p class="eyebrow">Where we are now</p>
+      <h2 class="section-title">Somewhere along the way,<br><em>we got lost.</em></h2>
+      <p>I know that my ego, my hurt and the way I withdrew played a big part in that. I am not building this to pretend otherwise.</p>
+    </div>
+
+    <div class="scene-scroll" id="sceneScroll">
+      <div class="scene-sticky" id="splitScene">
+        <div class="person-panel person-left">
+          <div class="person-image" data-image-frame><img src="assets/images/her.jpg" alt="Tahira"></div>
+          <div class="person-caption">you</div>
+        </div>
+        <div class="center-message" aria-live="polite">
+          <div class="message-line"></div>
+          <p class="message-small" id="messageSmall">this is where I was wrong</p>
+          <h3 id="phaseMessage"></h3>
+        </div>
+        <div class="person-panel person-right">
+          <div class="person-image" data-image-frame><img src="assets/images/me.jpg" alt="Me"></div>
+          <div class="person-caption">me</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="growth-copy">
+      <div class="growth-point reveal"><span class="point-number">01</span><div><h3>I know what I did wrong.</h3><p>I should have talked to you. I should have stayed. I should have let you see what was actually happening inside my head instead of disappearing into it.</p></div></div>
+      <div class="growth-point reveal"><span class="point-number">02</span><div><h3>I understand myself a little better now.</h3><p>I have always been very self-sufficient. When something hurts my self-esteem, my instinct is to withdraw and protect myself. I thought that was strength. I understand now that sometimes staying and communicating is the stronger thing.</p></div></div>
+      <div class="growth-point reveal"><span class="point-number">03</span><div><h3>I needed this phase to learn that.</h3><p>I wish I had learned it without hurting you. But going through this forced me to look at the part of me I kept avoiding. I don't want to become a different person just to win you back. I want to become better because you deserve a better version of the person who loves you.</p></div></div>
+      <div class="growth-point final-point reveal"><span class="point-number">04</span><div><h3>And slowly, I started moving closer again.</h3><p>Not because the past stopped mattering. Because I finally understood what mattered more than my hurt.</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="timeline-section section"><div class="container"><p class="eyebrow reveal">Our story isn't a straight line</p><h2 class="section-title reveal">No love story is perfect.</h2><p class="timeline-intro reveal">Maybe a difficult chapter doesn't have to be the last chapter.</p><div class="timeline-wrap reveal"><div class="timeline-line"></div><div class="timeline-item"><span class="timeline-dot"></span><span class="timeline-number">01</span><h3>Beginning</h3><p>Two people finding each other.</p></div><div class="timeline-item"><span class="timeline-dot"></span><span class="timeline-number">02</span><h3>Infatuation</h3><p>Everything felt new.</p></div><div class="timeline-item"><span class="timeline-dot"></span><span class="timeline-number">03</span><h3>Love</h3><p>It became something real.</p></div><div class="timeline-item current"><span class="timeline-dot"></span><span class="timeline-number">04</span><h3>A bad phase</h3><p>This is where we are.</p><span class="current-tag">YOU ARE HERE</span></div><div class="timeline-item"><span class="timeline-dot"></span><span class="timeline-number">05</span><h3>Getting back</h3><p>Only if we both choose it.</p></div><div class="timeline-item"><span class="timeline-dot"></span><span class="timeline-number">06</span><h3>Continuity</h3><p>Choosing each other through real life.</p></div><div class="timeline-item"><span class="timeline-dot"></span><span class="timeline-number">07</span><h3>Happily ever after</h3><p>A hope, not a promise.</p></div></div></div></section>
+<section class="letter-section section"><div class="container narrow"><p class="eyebrow reveal">For the difficult days</p><h2 class="section-title reveal">Things I wish I could answer<br>whenever your mind asks them.</h2><p class="letter-intro reveal">You don't have to open these now. They're here in case someday you need to know what I would say.</p><div class="letter-stack">
+<details class="letter-card reveal"><summary><span>"I chose him, but he didn't choose me."</span><b>+</b></summary><div class="letter-answer"><p>I know why you feel that way, especially because of what happened on June 6. You asked me not to leave and I still did. I know there is no explanation that can change what that must have felt like for you. But please don't think that I walked away because I didn't choose you. I walked away because at that point I didn't know how to deal with everything I was feeling. I chose the wrong way of dealing with it, and I know I hurt you because of that.</p></div></details>
+<details class="letter-card reveal"><summary><span>"Maybe he didn't love me as much as I thought he did."</span><b>+</b></summary><div class="letter-answer"><p>I don't know how I can prove this to you now, but I never stopped loving you just because I stopped talking. I thought about calling you so many times. I thought about calling aunty. My home screen still has our picture. My gallery is still filled with our photos. I still haven't changed your nickname in Messenger. I know none of these things can undo what I did, but I want you to know that I wasn't living my life as if you had simply disappeared from it.</p></div></details>
+<details class="letter-card reveal"><summary><span>"Maybe I was stupid to trust him."</span><b>+</b></summary><div class="letter-answer"><p>I don't think you were stupid for trusting me. I gave you reasons to trust me and then I failed you when you needed me. That's on me. You don't need to blame yourself for believing in someone you loved. If anyone should carry that responsibility, it should be me for not protecting that trust.</p></div></details>
+<details class="letter-card reveal"><summary><span>"I hurt my family and made them miserable because of him."</span><b>+</b></summary><div class="letter-answer"><p>I know this is something that hurts you deeply, and I don't want to tell you that you shouldn't feel that way. But please don't think that loving me was something shameful or that everything you felt for me was a mistake. You loved someone and believed in the future you were trying to build with him. I know what happened afterwards caused pain for your family, but you shouldn't have to spend the rest of your life punishing yourself for loving someone.</p></div></details>
+<details class="letter-card reveal"><summary><span>"Maybe he only came back because he was lonely."</span><b>+</b></summary><div class="letter-answer"><p>I understand why you could think that. But that's not why I'm here. I didn't come back because I couldn't find someone else or because I suddenly felt lonely. I came back because I finally had enough time to understand what I had actually done and what I actually wanted. With all the noise gone, I realised that I didn't want to lose you.</p></div></details>
+<details class="letter-card reveal"><summary><span>"What if he leaves again when things become difficult?"</span><b>+</b></summary><div class="letter-answer"><p>I know I can't expect you to believe me when I say I won't. I wouldn't believe it either if I were in your position. I can only say that I understand now that leaving cannot be my way of dealing with difficult things. If I ever get another chance, I know I have to show you that through my actions. I can't ask you to forget what happened. I can only hope that someday I can show you that I have learned from it.</p></div></details>
+<details class="letter-card reveal"><summary><span>"Maybe he has already moved on."</span><b>+</b></summary><div class="letter-answer"><p>I haven't. But I also don't want you to feel responsible for that. You don't owe me anything because I haven't moved on. I just want you to know that I didn't stop caring about you. Even when I was quiet, you were still there in my thoughts. I just didn't know how to communicate any of it.</p></div></details>
+<details class="letter-card reveal"><summary><span>"Maybe I should never have loved him."</span><b>+</b></summary><div class="letter-answer"><p>I really don't want you to think that. If there is one thing I would never want you to regret, it is loving me. I know I hurt you, and I know I gave you every reason to question what we had. But the love you gave me was never something wrong. You gave me something very genuine, and I will always be grateful for that.</p></div></details>
+</div><div class="letter-closing reveal"><p class="closing-lead">And if one day you think, "He still doesn't understand how badly he hurt me."</p><p>I do, Tahira.</p><p>I understand why June 6 hurts you. I understand why you feel like I abandoned you. I understand why you feel like you chose me and I didn't choose you. And I understand why you don't trust me anymore.</p><p>I'm not writing this to argue with any of that. You have every right to feel the way you feel.</p><p>I just don't want you to carry the wrong idea about why I left.</p><p class="closing-emphasis">I didn't leave because you weren't enough.<br>I didn't leave because I didn't love you.<br>I didn't leave because I wanted someone else.</p><p>I left because I was hurt, confused, and too attached to my own way of protecting myself. And instead of communicating with the person I loved, I withdrew. That was my failure.</p></div></div></section>
+<section class="final-section section" id="final"><div class="container narrow final-inner"><p class="eyebrow reveal">One last thing</p><h2 class="final-title reveal">Can we try again?</h2><p class="final-copy reveal">I'm not asking you to forget anything. I'm not asking you to pretend nothing happened. I'm only asking whether there is still a small part of you that can imagine giving us another chance.</p><div class="choice-area reveal" id="choiceArea"><a class="choice yes-btn" href="tel:+8801332541716" id="yesBtn">Yes, let's talk</a><button class="choice no-btn" id="noBtn" type="button">No, not now</button></div><p class="tiny-note">You don't have to make a perfect decision. Just tell me you're ready to talk.</p><div class="call-reveal" id="callReveal"><p>Then call me.</p><a href="tel:+8801332541716">+880 1332 543 2541</a></div></div></section>
+</main><footer>Made with a lot of thought, and a little bit of hope.</footer>
+<script>
+(function(){
+  document.documentElement.classList.add('js-ready');
+  const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+  const progress=$('#progressBar');
+  function scrollProgress(){const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?scrollY/max*100:0)+'%'}
+  addEventListener('scroll',scrollProgress,{passive:true});scrollProgress();
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');obs.unobserve(e.target)}}),{threshold:.10});
+  $$('.reveal').forEach((el,i)=>{el.style.transitionDelay=Math.min(i*35,300)+'ms';obs.observe(el)});
+  // Broken/missing images never hide the design.
+  $$('img').forEach(img=>img.addEventListener('error',()=>{img.classList.add('failed');img.parentElement.classList.add('missing')},{once:true}));
+  // One expandable answer at a time.
+  $$('.letter-card').forEach(card=>card.addEventListener('toggle',()=>{if(card.open)$$('.letter-card').forEach(x=>{if(x!==card)x.open=false})}));
+  // Dedicated scroll scene: photos start together, separate to create the apology space, then come back together.
+  const sceneScroll=$('#sceneScroll'), scene=$('#splitScene'), left=$('.person-left'), right=$('.person-right'), centerMsg=$('.center-message'), msg=$('#phaseMessage'), msgSmall=$('#messageSmall');
+  const messages=[
+    {small:'this is where I was wrong', text:'I went quiet<br>when I should have stayed.'},
+    {small:'then I started seeing it clearly', text:'My ego was speaking<br>louder than my heart.'},
+    {small:'with some distance', text:'I finally understood<br>what I was doing.'},
+    {small:'and slowly', text:'I realised what mattered<br>more than my hurt.'},
+    {small:'what I want you to know', text:'I want to be better<br>for the person I love.'}
+  ];
+  function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
+  function smoothstep(a,b,x){x=clamp((x-a)/(b-a),0,1);return x*x*(3-2*x)}
+  function updateScene(){
+    if(!sceneScroll||!scene)return;
+    const r=sceneScroll.getBoundingClientRect();
+    const total=Math.max(1,sceneScroll.offsetHeight-innerHeight);
+    const p=clamp(-r.top/total,0,1);
+    // 0-.28: together -> apart. .28-.72: held apart. .72-1: apart -> together.
+    let separation;
+    if(p<.28) separation=smoothstep(0,.28,p);
+    else if(p<.72) separation=1;
+    else separation=1-smoothstep(.72,1,p);
+
+    // Translate each image by a substantial amount so the middle really opens up.
+    const travel=separation*(window.innerWidth<650?80:170);
+    left.style.transform=`translateX(${-travel}px)`;
+    right.style.transform=`translateX(${travel}px)`;
+
+    // Grow the center column only once the images begin moving apart.
+    const centerWidth=separation*(window.innerWidth<650?72:250);
+    scene.style.gridTemplateColumns=`1fr ${centerWidth}px 1fr`;
+
+    // The message begins appearing as space opens and stays present while the story gets lighter.
+    const messageProgress=clamp((p-.16)/.70,0,1);
+    centerMsg.style.opacity=messageProgress.toFixed(3);
+    centerMsg.style.transform=`translateY(${15*(1-messageProgress)}px) scale(${.96+.04*messageProgress})`;
+    const idx=Math.min(messages.length-1,Math.floor(messageProgress*messages.length));
+    if(msg.dataset.i!==String(idx)){
+      msg.dataset.i=String(idx);
+      msg.innerHTML=messages[idx].text;
+      msgSmall.textContent=messages[idx].small;
+      if(messageProgress>.18){
+        msg.animate([{opacity:0,transform:'translateY(9px)'},{opacity:1,transform:'translateY(0)'}],{duration:420,easing:'ease-out'});
+      }
+    }
+  }
+  addEventListener('scroll',updateScene,{passive:true});
+  addEventListener('resize',updateScene);
+  updateScene();
+  // The No control remains in the choice area and moves away rather than submitting anything.
+  const area=$('#choiceArea'),no=$('#noBtn'),yes=$('#yesBtn'),call=$('#callReveal');
+  function dodge(e){if(e){e.preventDefault();e.stopPropagation()}const w=area.clientWidth,h=area.clientHeight,bw=no.offsetWidth,bh=no.offsetHeight;no.style.position='absolute';no.style.left=Math.max(4,Math.random()*(w-bw-8))+'px';no.style.top=Math.max(4,Math.random()*(h-bh-8))+'px'}
+  ['pointerenter','pointerdown','touchstart'].forEach(ev=>no.addEventListener(ev,dodge,{passive:false}));
+  no.addEventListener('click',dodge);
+  yes.addEventListener('click',()=>call.classList.add('show'));
+})();
+</script>
+<script>
+(function(){
+  // Background music via the YouTube IFrame API.
+  // Autoplay with sound is blocked by browsers, so we start muted and
+  // unmute on the visitor's first scroll/tap/keypress — feels seamless.
+  const VIDEO_ID = 'bYCz5ak_52Q';
+  let ytPlayer = null, ytReady = false, started = false, muted = true;
+  const toggleBtn = document.getElementById('musicToggle');
+
+  window.onYouTubeIframeAPIReady = function () {
+    ytPlayer = new YT.Player('yt-player', {
+      height: '1',
+      width: '1',
+      videoId: VIDEO_ID,
+      playerVars: {
+        autoplay: 1,
+        mute: 1,
+        loop: 1,
+        playlist: VIDEO_ID,
+        controls: 0,
+        disablekb: 1,
+        playsinline: 1,
+        modestbranding: 1
+      },
+      events: {
+        onReady: function (e) {
+          ytReady = true;
+          e.target.playVideo();
+        }
+      }
+    });
+  };
+
+  const tag = document.createElement('script');
+  tag.src = 'https://www.youtube.com/iframe_api';
+  document.head.appendChild(tag);
+
+  function beginUnmutedPlayback() {
+    if (!ytReady || started) return;
+    started = true;
+    muted = false;
+    ytPlayer.unMute();
+    ytPlayer.setVolume(45);
+    ytPlayer.playVideo();
+    toggleBtn.textContent = '♫';
+  }
+  document.addEventListener('pointerdown', beginUnmutedPlayback, { once: true });
+  document.addEventListener('scroll', beginUnmutedPlayback, { once: true, passive: true });
+  document.addEventListener('keydown', beginUnmutedPlayback, { once: true });
+
+  toggleBtn.addEventListener('click', function () {
+    if (!ytReady) return;
+    if (!started) { beginUnmutedPlayback(); return; }
+    if (muted) {
+      ytPlayer.unMute();
+      toggleBtn.textContent = '♫';
+    } else {
+      ytPlayer.mute();
+      toggleBtn.textContent = '♪';
+    }
+    muted = !muted;
+  });
+})();
+</script>
+</body></html>
