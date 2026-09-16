@@ -47,19 +47,29 @@ a{color:inherit}.section{padding:120px 24px;position:relative}.container{max-wid
 /* final */
 .final-section{background:radial-gradient(circle at 50% 15%,#fff9f6,#f8eeeb 46%,#f2e3df 100%);min-height:88vh;display:grid;align-items:center;text-align:center}.final-inner{width:100%}.final-title{font-size:clamp(74px,10vw,130px)}.final-copy{max-width:640px;margin:30px auto 44px;color:var(--muted);font-size:17px}.choice-area{width:370px;height:120px;margin:auto;position:relative;display:flex;justify-content:center;align-items:center;gap:18px}.choice{display:inline-flex;align-items:center;justify-content:center;height:50px;padding:0 25px;border-radius:999px;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s;font-weight:600;font-size:14px;z-index:2}.yes-btn{background:var(--rose);color:#fff;box-shadow:0 15px 35px rgba(159,94,94,.22)}.yes-btn:hover{transform:translateY(-2px);box-shadow:0 20px 40px rgba(159,94,94,.28)}.no-btn{background:rgba(255,255,255,.78);color:#6e5e5b;border-color:rgba(110,94,91,.14);position:relative}.tiny-note{margin:14px 0 0;color:#9b8782;font-size:11px}.call-reveal{opacity:0;transform:translateY(12px);pointer-events:none;margin-top:28px;transition:.5s}.call-reveal.show{opacity:1;transform:translateY(0);pointer-events:auto}.call-reveal p{margin:0 0 4px;color:var(--muted)}.call-reveal a{color:var(--rose);font-family:"Cormorant Garamond",serif;font-size:34px;text-decoration:none}footer{padding:28px 20px 36px;text-align:center;font-size:11px;letter-spacing:.08em;color:#9f8a84;background:#f2e3df}
 /* music control */
-#musicToggle{position:fixed;bottom:22px;right:22px;z-index:1000;width:46px;height:46px;border-radius:50%;border:1px solid rgba(110,94,91,.16);background:rgba(255,250,248,.85);backdrop-filter:blur(10px);cursor:pointer;font-size:17px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(81,56,50,.14);color:var(--rose);transition:transform .2s,box-shadow .2s}
-#musicToggle:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(81,56,50,.18)}
+#musicToggle{position:fixed;bottom:22px;right:22px;z-index:1000;width:46px;height:46px;border-radius:50%;border:1px solid rgba(169,98,96,.28);background:rgba(255,250,248,.9);backdrop-filter:blur(10px);cursor:pointer;font-size:17px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(81,56,50,.14),0 0 0 0 rgba(169,98,96,.35);color:var(--rose);transition:transform .2s,box-shadow .2s}
+#musicToggle:hover{transform:translateY(-2px)}
+#musicToggle.pulse{animation:musicPulse 2.4s ease-out infinite}
+@keyframes musicPulse{0%{box-shadow:0 10px 30px rgba(81,56,50,.14),0 0 0 0 rgba(169,98,96,.38)}70%{box-shadow:0 10px 30px rgba(81,56,50,.14),0 0 0 11px rgba(169,98,96,0)}100%{box-shadow:0 10px 30px rgba(81,56,50,.14),0 0 0 0 rgba(169,98,96,0)}}
 @media(max-width:900px){.section{padding:88px 20px}.split-scene{grid-template-columns:1fr 120px 1fr;min-height:450px}.center-message h3{font-size:27px}.timeline-wrap{grid-template-columns:repeat(7,155px)}}
 @media(max-width:650px){.section{padding:72px 16px}.hero-title{font-size:clamp(55px,16vw,82px)}.hero-subtitle{font-size:15px}.hero-photo{border-radius:22px}.memory-grid{grid-template-columns:1fr}.memory-img,.memory-card:nth-child(2) .memory-img{aspect-ratio:4/5}.split-scene{height:430px;min-height:430px;grid-template-columns:1fr 70px 1fr}.person-left{padding-right:8px}.person-right{padding-left:8px}.person-image{border-radius:20px}.center-message{padding:4px}.center-message h3{font-size:24px}.message-small{font-size:7px}.growth-copy{margin-top:65px}.growth-point{grid-template-columns:35px 1fr;gap:15px}.growth-point h3{font-size:29px}.letter-card summary{font-size:22px;padding:19px 18px}.letter-answer{padding:0 18px 21px;font-size:15px}.closing-emphasis{font-size:27px}.choice-area{width:min(95vw,340px)}.choice{padding:0 19px}.final-title{font-size:75px}.call-reveal a{font-size:28px}#musicToggle{width:42px;height:42px;bottom:16px;right:16px}}
+/* mobile timeline: vertical layout so nothing gets cropped */
+@media(max-width:650px){
+  .timeline-wrap{display:flex;flex-direction:column;gap:34px;overflow-x:visible;padding:10px 0 6px 32px;position:relative}
+  .timeline-line{left:6px;right:auto;top:6px;bottom:6px;width:1px;height:auto;background:#dbc9c4}
+  .timeline-item{min-width:0;padding-top:0}
+  .timeline-dot{left:-26px;top:8px;transform:none}
+  .timeline-item p{max-width:none}
+}
 </style>
 </head>
 <body>
 <div class="progress"><span id="progressBar"></span></div>
-<div id="yt-player" style="position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;overflow:hidden;bottom:0;left:0;" aria-hidden="true"></div>
-<button id="musicToggle" type="button" aria-label="Toggle music" title="Music">♪</button>
+<audio id="bgMusic" src="assets/audio/Kaavish.mp3" loop preload="none"></audio>
+<button id="musicToggle" class="pulse" type="button" aria-label="Play music" title="Play music">♪</button>
 <main>
 <section class="hero section"><div class="container hero-inner"><p class="eyebrow reveal">For Tahira</p><h1 class="hero-title reveal">Maybe some things<br><em>need to be said slowly.</em></h1><p class="hero-subtitle reveal">So I made this little place for our story, the things I understand now, and everything I couldn't say properly before.</p><div class="hero-photo reveal" data-image-frame><img src="assets/images/hero.jpg" alt="A photo of us"><div class="photo-overlay">our story</div></div><div class="scroll-hint reveal"><span>scroll slowly</span><i></i></div></div></section>
-<section class="story section"><div class="container narrow"><p class="eyebrow reveal">Our story</p><h2 class="section-title reveal">It started so simply.</h2><div class="story-copy reveal"><p>We started by simply getting to know each other — learning about each other’s lives, our work, and the things we had both been through. In the beginning, most of our conversations were formal. You called me “bhaiya” so many times that I never imagined where we would eventually end up.</p><p>I made the first move. You declined. And then you declined again. And again. Three times. Somewhere along the way, things slowly changed. We became something more than two people who were simply getting to know each other. We chose each other. We made promises. We started imagining a life where we would stay beside each other, through the good days and the difficult ones.</p><p>But while I was trying to become closer to you, I was also fighting my own demons. And somewhere in that struggle, I didn't always know how to do what I should have done. When I was supposed to communicate, I withdrew. When I was supposed to open up, I went quiet. When I was supposed to make you feel like the most important part of my life, I let my own fears, ego, and way of protecting myself get in the way. And I don't think either of us ever imagined that we would reach a point where we would have to wonder whether our story had ended.</p></div><div class="memory-grid reveal"><figure class="memory-card"><div class="memory-img" data-image-frame><img src="assets/images/story-1.jpg" alt="Our memory"></div><figcaption>the moments I still keep close</figcaption></figure><figure class="memory-card"><div class="memory-img" data-image-frame><img src="assets/images/story-2.jpg" alt="Another memory of us"></div><figcaption>the little things mattered too</figcaption></figure></div></div></section>
+<section class="story section"><div class="container narrow"><p class="eyebrow reveal">Our story</p><h2 class="section-title reveal">It started so simply.</h2><div class="story-copy reveal"><p>We started by simply getting to know each other — learning about each other's lives, our work, and the things we had both been through. In the beginning, most of our conversations were formal. You called me "bhaiya" so many times that I never imagined where we would eventually end up.</p><p>I made the first move. You declined. And then you declined again. And again. Three times. Somewhere along the way, things slowly changed. We became something more than two people who were simply getting to know each other. We chose each other. We made promises. We started imagining a life where we would stay beside each other, through the good days and the difficult ones.</p><p>But while I was trying to become closer to you, I was also fighting my own demons. And somewhere in that struggle, I didn't always know how to do what I should have done. When I was supposed to communicate, I withdrew. When I was supposed to open up, I went quiet. When I was supposed to make you feel like the most important part of my life, I let my own fears, ego, and way of protecting myself get in the way. And I don't think either of us ever imagined that we would reach a point where we would have to wonder whether our story had ended.</p></div><div class="memory-grid reveal"><figure class="memory-card"><div class="memory-img" data-image-frame><img src="assets/images/story-1.jpg" alt="Our memory"></div><figcaption>the moments I still keep close</figcaption></figure><figure class="memory-card"><div class="memory-img" data-image-frame><img src="assets/images/story-2.jpg" alt="Another memory of us"></div><figcaption>the little things mattered too</figcaption></figure></div></div></section>
 <section class="separation section">
   <div class="container">
     <div class="separation-intro reveal">
@@ -95,6 +105,7 @@ a{color:inherit}.section{padding:120px 24px;position:relative}.container{max-wid
   </div>
 </section>
 <section class="timeline-section section"><div class="container"><p class="eyebrow reveal">Our story isn't a straight line</p><h2 class="section-title reveal">No love story is perfect.</h2><p class="timeline-intro reveal">Maybe a difficult chapter doesn't have to be the last chapter.</p><div class="timeline-wrap reveal"><div class="timeline-line"></div><div class="timeline-item"><span class="timeline-dot"></span><span class="timeline-number">01</span><h3>Beginning</h3><p>Two people finding each other.</p></div><div class="timeline-item"><span class="timeline-dot"></span><span class="timeline-number">02</span><h3>Infatuation</h3><p>Everything felt new.</p></div><div class="timeline-item"><span class="timeline-dot"></span><span class="timeline-number">03</span><h3>Love</h3><p>It became something real.</p></div><div class="timeline-item current"><span class="timeline-dot"></span><span class="timeline-number">04</span><h3>A bad phase</h3><p>This is where we are.</p><span class="current-tag">YOU ARE HERE</span></div><div class="timeline-item"><span class="timeline-dot"></span><span class="timeline-number">05</span><h3>Getting back</h3><p>Only if we both choose it.</p></div><div class="timeline-item"><span class="timeline-dot"></span><span class="timeline-number">06</span><h3>Continuity</h3><p>Choosing each other through real life.</p></div><div class="timeline-item"><span class="timeline-dot"></span><span class="timeline-number">07</span><h3>Happily ever after</h3><p>A hope, not a promise.</p></div></div></div></section>
+<section class="final-section section" id="final"><div class="container narrow final-inner"><p class="eyebrow reveal">One last thing</p><h2 class="final-title reveal">Can we try again?</h2><p class="final-copy reveal">I'm not asking you to forget anything. I'm not asking you to pretend nothing happened. I'm only asking whether there is still a small part of you that can imagine giving us another chance.</p><div class="choice-area reveal" id="choiceArea"><a class="choice yes-btn" href="tel:+8801332541716" id="yesBtn">Yes, let's talk</a><button class="choice no-btn" id="noBtn" type="button">No, not now</button></div><p class="tiny-note">You don't have to make a perfect decision. Just tell me you're ready to talk.</p><div class="call-reveal" id="callReveal"><p>Then call me.</p><a href="tel:+8801332541716">+880 1332 543 2541</a></div></div></section>
 <section class="letter-section section"><div class="container narrow"><p class="eyebrow reveal">For the difficult days</p><h2 class="section-title reveal">Things I wish I could answer<br>whenever your mind asks them.</h2><p class="letter-intro reveal">You don't have to open these now. They're here in case someday you need to know what I would say.</p><div class="letter-stack">
 <details class="letter-card reveal"><summary><span>"I chose him, but he didn't choose me."</span><b>+</b></summary><div class="letter-answer"><p>I know why you feel that way, especially because of what happened on June 6. You asked me not to leave and I still did. I know there is no explanation that can change what that must have felt like for you. But please don't think that I walked away because I didn't choose you. I walked away because at that point I didn't know how to deal with everything I was feeling. I chose the wrong way of dealing with it, and I know I hurt you because of that.</p></div></details>
 <details class="letter-card reveal"><summary><span>"Maybe he didn't love me as much as I thought he did."</span><b>+</b></summary><div class="letter-answer"><p>I don't know how I can prove this to you now, but I never stopped loving you just because I stopped talking. I thought about calling you so many times. I thought about calling aunty. My home screen still has our picture. My gallery is still filled with our photos. I still haven't changed your nickname in Messenger. I know none of these things can undo what I did, but I want you to know that I wasn't living my life as if you had simply disappeared from it.</p></div></details>
@@ -105,7 +116,6 @@ a{color:inherit}.section{padding:120px 24px;position:relative}.container{max-wid
 <details class="letter-card reveal"><summary><span>"Maybe he has already moved on."</span><b>+</b></summary><div class="letter-answer"><p>I haven't. But I also don't want you to feel responsible for that. You don't owe me anything because I haven't moved on. I just want you to know that I didn't stop caring about you. Even when I was quiet, you were still there in my thoughts. I just didn't know how to communicate any of it.</p></div></details>
 <details class="letter-card reveal"><summary><span>"Maybe I should never have loved him."</span><b>+</b></summary><div class="letter-answer"><p>I really don't want you to think that. If there is one thing I would never want you to regret, it is loving me. I know I hurt you, and I know I gave you every reason to question what we had. But the love you gave me was never something wrong. You gave me something very genuine, and I will always be grateful for that.</p></div></details>
 </div><div class="letter-closing reveal"><p class="closing-lead">And if one day you think, "He still doesn't understand how badly he hurt me."</p><p>I do, Tahira.</p><p>I understand why June 6 hurts you. I understand why you feel like I abandoned you. I understand why you feel like you chose me and I didn't choose you. And I understand why you don't trust me anymore.</p><p>I'm not writing this to argue with any of that. You have every right to feel the way you feel.</p><p>I just don't want you to carry the wrong idea about why I left.</p><p class="closing-emphasis">I didn't leave because you weren't enough.<br>I didn't leave because I didn't love you.<br>I didn't leave because I wanted someone else.</p><p>I left because I was hurt, confused, and too attached to my own way of protecting myself. And instead of communicating with the person I loved, I withdrew. That was my failure.</p></div></div></section>
-<section class="final-section section" id="final"><div class="container narrow final-inner"><p class="eyebrow reveal">One last thing</p><h2 class="final-title reveal">Can we try again?</h2><p class="final-copy reveal">I'm not asking you to forget anything. I'm not asking you to pretend nothing happened. I'm only asking whether there is still a small part of you that can imagine giving us another chance.</p><div class="choice-area reveal" id="choiceArea"><a class="choice yes-btn" href="tel:+8801332541716" id="yesBtn">Yes, let's talk</a><button class="choice no-btn" id="noBtn" type="button">No, not now</button></div><p class="tiny-note">You don't have to make a perfect decision. Just tell me you're ready to talk.</p><div class="call-reveal" id="callReveal"><p>Then call me.</p><a href="tel:+8801332541716">+880 1332 543 2541</a></div></div></section>
 </main><footer>Made with a lot of thought, and a little bit of hope.</footer>
 <script>
 (function(){
@@ -178,66 +188,32 @@ a{color:inherit}.section{padding:120px 24px;position:relative}.container{max-wid
 </script>
 <script>
 (function(){
-  // Background music via the YouTube IFrame API.
-  // Autoplay with sound is blocked by browsers, so we start muted and
-  // unmute on the visitor's first scroll/tap/keypress — feels seamless.
-  const VIDEO_ID = 'bYCz5ak_52Q';
-  let ytPlayer = null, ytReady = false, started = false, muted = true;
-  const toggleBtn = document.getElementById('musicToggle');
+  // Background music from a local file — more reliable across browsers than an
+  // embedded YouTube player, and avoids ads entirely.
+  const audio = document.getElementById('bgMusic');
+  const btn = document.getElementById('musicToggle');
 
-  window.onYouTubeIframeAPIReady = function () {
-    ytPlayer = new YT.Player('yt-player', {
-      height: '1',
-      width: '1',
-      videoId: VIDEO_ID,
-      playerVars: {
-        autoplay: 1,
-        mute: 1,
-        loop: 1,
-        playlist: VIDEO_ID,
-        controls: 0,
-        disablekb: 1,
-        playsinline: 1,
-        modestbranding: 1
-      },
-      events: {
-        onReady: function (e) {
-          ytReady = true;
-          e.target.playVideo();
-        }
-      }
-    });
-  };
-
-  const tag = document.createElement('script');
-  tag.src = 'https://www.youtube.com/iframe_api';
-  document.head.appendChild(tag);
-
-  function beginUnmutedPlayback() {
-    if (!ytReady || started) return;
-    started = true;
-    muted = false;
-    ytPlayer.unMute();
-    ytPlayer.setVolume(45);
-    ytPlayer.playVideo();
-    toggleBtn.textContent = '♫';
+  function setPlayingUI(isPlaying){
+    btn.textContent = isPlaying ? '♫' : '♪';
+    btn.classList.toggle('pulse', !isPlaying);
+    btn.setAttribute('aria-label', isPlaying ? 'Pause music' : 'Play music');
+    btn.setAttribute('title', isPlaying ? 'Pause music' : 'Play music');
   }
-  document.addEventListener('pointerdown', beginUnmutedPlayback, { once: true });
-  document.addEventListener('scroll', beginUnmutedPlayback, { once: true, passive: true });
-  document.addEventListener('keydown', beginUnmutedPlayback, { once: true });
 
-  toggleBtn.addEventListener('click', function () {
-    if (!ytReady) return;
-    if (!started) { beginUnmutedPlayback(); return; }
-    if (muted) {
-      ytPlayer.unMute();
-      toggleBtn.textContent = '♫';
-    } else {
-      ytPlayer.mute();
-      toggleBtn.textContent = '♪';
-    }
-    muted = !muted;
+  function tryAutoStart(){
+    audio.play().catch(()=>{ /* browser blocked it — the button still works */ });
+  }
+  ['pointerdown','scroll','keydown'].forEach(ev=>
+    document.addEventListener(ev, tryAutoStart, { once:true, passive:true })
+  );
+
+  btn.addEventListener('click', function(){
+    if (audio.paused) { audio.play().catch(()=>{}); }
+    else { audio.pause(); }
   });
+
+  audio.addEventListener('play', ()=>setPlayingUI(true));
+  audio.addEventListener('pause', ()=>setPlayingUI(false));
 })();
 </script>
 </body></html>
